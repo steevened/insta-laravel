@@ -15,10 +15,12 @@
     <body class="bg-gray-900 text-gray-200 ">
       <header class="p-5 border-b bg-slate-900 border-slate-700">
         <div class="container mx-auto flex justify-between items-center">
-          <h1 class="font-semibold text-xl md:text-2xl">InstaDevs</h1>
+          <h1 class="font-semibold text-xl md:text-2xl">
+            <a href="/">InstaDevs</a>
+          </h1>
           <nav class="text-md font-semibold space-x-2">
-            <a href="#">Login</a>
-            <a href="#">Sign Up</a>
+            <a href="/login">Login</a>
+            <a href="/sign-up">Sign Up</a>
           </nav>
         </div>
       </header>
@@ -28,10 +30,10 @@
         </h2>
         @yield('content')
       </main>
-      <footer class="uppercase border-t border-slate-700">
+      <footer class="uppercase border-t border-slate-700 bg-slate-900">
         <div class="container mx-auto text-center py-5">
 
-          <p>InstaDev - All Rights Reserved - {{now()->year}}</p>
+          <p class="font-medium">InstaDev - All Rights Reserved - {{now()->year}}</p>
         </div>
 
       </footer>
