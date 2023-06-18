@@ -18,10 +18,3 @@ Route::get('/', function () {
 });
 
 
-Route::get('/team', function () {
-    return view('team');
-});
-
-Route::get('/shop', function () {
-    return view('shop');
-});
