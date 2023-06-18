@@ -25,7 +25,7 @@
         </div>
       </header>
       <main class="container mx-auto my-10 px-5 min-h-[calc(100vh-220px)]">
-        <h2 class="font-semibold text-2xl md:text-3xl mb-5">
+        <h2 class="font-semibold text-2xl md:text-3xl mb-5 text-center">
           @yield('title')
         </h2>
         @yield('content')
