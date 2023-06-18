@@ -9,33 +9,45 @@
     <div class="md:w-4/12">
       <p>Image</p>
     </div>
-    <div class="md:w-4/12 mt-5 bg-slate-800 p-6 rounded-lg shadow-2xl shadow-slate-900">
-      <form>
+    <div class="p-6 mt-5 rounded-lg shadow-2xl md:w-4/12 bg-slate-800 shadow-slate-900">
+      <form action="{{route('register')}}" method="POST">
+        @csrf
         <div class="mb-5">
-          <label for="name" class="mb-2 block uppercase font-semibold">Name</label>
-          <input id="name" name="name" type="text" placeholder="Name" class="border p-2 w-full rounded-lg focus:outline-none focus:ring bg-slate-700 border-slate-500 text-gray-200 placeholder-gray-200 duration-100"/>
+          <label for="name" class="block mb-2 font-semibold uppercase">Name</label>
+          <input 
+          id="name" 
+          name="name" 
+          type="text" 
+          placeholder="Name" 
+          class="w-full p-2 text-gray-200 placeholder-gray-200 duration-100 border rounded-lg focus:outline-none focus:ring bg-slate-700 border-slate-500"
+          />
+          @error('name')
+            <p class="py-1 mt-2 text-center text-white bg-red-500 rounded-md">
+              {{$message}}
+            </p>
+          @enderror
         </div>
         <div class="mb-5">
-          <label for="username" class="mb-2 block uppercase font-semibold">Username</label>
-          <input id="username" name="username" type="text" placeholder="Username" class="border p-2 w-full rounded-lg focus:outline-none focus:ring bg-slate-700 border-slate-500 text-gray-200 placeholder-gray-200 duration-100"/>
+          <label for="username" class="block mb-2 font-semibold uppercase">Username</label>
+          <input id="username" name="username" type="text" placeholder="Username" class="w-full p-2 text-gray-200 placeholder-gray-200 duration-100 border rounded-lg focus:outline-none focus:ring bg-slate-700 border-slate-500"/>
+        </div>
+
+        <div class="mb-5">
+          <label for="email" class="block mb-2 font-semibold uppercase">email</label>
+          <input id="email" name="email" type="email" placeholder="email" class="w-full p-2 text-gray-200 placeholder-gray-200 duration-100 border rounded-lg focus:outline-none focus:ring bg-slate-700 border-slate-500"/>
         </div>
 
         <div class="mb-5">
-          <label for="email" class="mb-2 block uppercase font-semibold">email</label>
-          <input id="email" name="email" type="email" placeholder="email" class="border p-2 w-full rounded-lg focus:outline-none focus:ring bg-slate-700 border-slate-500 text-gray-200 placeholder-gray-200 duration-100"/>
+          <label for="password" class="block mb-2 font-semibold uppercase">password</label>
+          <input id="password" name="password" type="password" placeholder="password" class="w-full p-2 text-gray-200 placeholder-gray-200 duration-100 border rounded-lg focus:outline-none focus:ring bg-slate-700 border-slate-500"/>
         </div>
 
         <div class="mb-5">
-          <label for="password" class="mb-2 block uppercase font-semibold">password</label>
-          <input id="password" name="password" type="password" placeholder="password" class="border p-2 w-full rounded-lg focus:outline-none focus:ring bg-slate-700 border-slate-500 text-gray-200 placeholder-gray-200 duration-100"/>
+          <label for="password_confirmation" class="block mb-2 font-semibold uppercase">repeat password</label>
+          <input id="password_confirmation" name="password_confirmation" type="password" placeholder="repeat password" class="w-full p-2 text-gray-200 placeholder-gray-200 duration-100 border rounded-lg focus:outline-none focus:ring bg-slate-700 border-slate-500"/>
         </div>
 
-        <div class="mb-5">
-          <label for="password_confirmation" class="mb-2 block uppercase font-semibold">repeat password</label>
-          <input id="password_confirmation" name="password_confirmation" type="password" placeholder="repeat password" class="border p-2 w-full rounded-lg focus:outline-none focus:ring bg-slate-700 border-slate-500 text-gray-200 placeholder-gray-200 duration-100"/>
-        </div>
-
-        <button class="bg-sky-500 p-2 text-center block w-full font-semibold rounded-lg duration-100 hover:bg-sky-700" value="create account">Create account</button>
+        <button class="block w-full p-2 font-semibold text-center duration-100 rounded-lg bg-sky-500 hover:bg-sky-700" value="create account">Create account</button>
         
       </form>
     </div>

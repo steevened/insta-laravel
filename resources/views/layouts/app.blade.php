@@ -12,26 +12,26 @@
         @vite('resources/css/app.css')
       
     </head>
-    <body class="bg-gray-900 text-gray-200 ">
+    <body class="text-gray-200 bg-gray-900 ">
       <header class="p-5 border-b bg-slate-900 border-slate-700">
-        <div class="container mx-auto flex justify-between items-center">
-          <h1 class="font-semibold text-xl md:text-2xl">
+        <div class="container flex items-center justify-between mx-auto">
+          <h1 class="text-xl font-semibold md:text-2xl">
             <a href="/">InstaDevs</a>
           </h1>
-          <nav class="text-md font-semibold space-x-2">
+          <nav class="space-x-2 font-semibold text-md">
             <a href="/login">Login</a>
-            <a href="/sign-up">Sign Up</a>
+            <a href="{{route('register')}}">Sign Up</a>
           </nav>
         </div>
       </header>
       <main class="container mx-auto my-10 px-5 min-h-[calc(100vh-220px)]">
-        <h2 class="font-semibold text-2xl md:text-3xl mb-5 text-center">
+        <h2 class="mb-5 text-2xl font-semibold text-center md:text-3xl">
           @yield('title')
         </h2>
         @yield('content')
       </main>
       <footer class="uppercase border-t border-slate-700 bg-slate-900">
-        <div class="container mx-auto text-center py-5">
+        <div class="container py-5 mx-auto text-center">
 
           <p class="font-medium">InstaDev - All Rights Reserved - {{now()->year}}</p>
         </div>
